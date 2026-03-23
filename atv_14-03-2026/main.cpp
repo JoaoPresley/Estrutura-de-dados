@@ -21,7 +21,7 @@ typedef struct
 typedef struct
 {
     REGISTRO A[MAX]; //array da minha variavel lista
-    int n_registros; //numero de registros que tem na lista
+    int n_registros = 0; //numero de registros que tem na lista
 
     //método para inserir na lista
     bool inserir(REGISTRO value, int pos){
@@ -65,6 +65,42 @@ typedef struct
 }LISTA;
 
 int main() {
-    cout << "Hello World" << endl;
+    //Criação das variaveis
+    LISTA l; //lista que será manipulada
+    REGISTRO aux; //registro que será inserido na lista
+    int encontrado; //posição do item que foi encontrado
+    bool resp; //resposta da inserção
+
+    //INSERINDO ITENS NA LISTA
+    cout << "-----1 ETAPA - INSERCAO DE VALORES-------"<<endl;
+    aux.chave = 1;
+    resp = l.inserir(aux, 0); //insere na posição correta
+    cout << "Inserido valor " << aux.chave << "na lista l: ";
+    if(resp){
+        cout << "INSERIDO COM SUCESSO!";
+    }else{
+        cout << "FALHA AO INSERIR!";
+    }
+    cout << "\n\n";
+
+    aux.chave = 2;
+    resp = l.inserir(aux, 1); //insere na posição correta
+    cout << "Inserido valor " << aux.chave << "na lista l: ";
+    if(resp){
+        cout << "INSERIDO COM SUCESSO!";
+    }else{
+        cout << "FALHA AO INSERIR!";
+    }
+    cout << "\n\n";
+
+    aux.chave = 60;
+    resp = l.inserir(aux, 5); //insere na posição incorreta
+    cout << "Inserido valor " << aux.chave << " na lista l: ";
+    if(resp){
+        cout << "INSERIDO COM SUCESSO!";
+    }else{
+        cout << "FALHA AO INSERIR!";
+    }
+
     return 0;
 }
