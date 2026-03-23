@@ -46,19 +46,20 @@ typedef struct
     //método para buscar um elemento na lista
     //retorna o indice que ele está
     int busca(REGISTRO value){
+        //Começa a busca no fim do vetor
         int pos = n_registros-1;
+        //vai varrendo todo o vetor até chegar ao final
         while (pos >= 0)
         {
-            REGISTRO comparador;
-            if (A[pos].chave == value.chave)
+            if (A[pos].chave == value.chave)//achou o registro? para e retorna a posição
             {
                 break;
-            }else
+            }else//não achou? continua decrementando até achar
             {
                 pos--;
             }
         }
-        
+        //se retornar -1 é pq não encontrou
         return pos;
     }
 }LISTA;
