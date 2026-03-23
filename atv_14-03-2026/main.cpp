@@ -1,3 +1,9 @@
+/*
+Utilizando o código desenvolvido em aula. Criar as seguintes funções:
+1) Buscar um elemento na lista. RESPOSTA
+2) Remover um elemento da lista (Não é permitido "buracos" na lista")
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -22,7 +28,7 @@ typedef struct
         //valida inserção
         if (pos > n_registros || //Se o valor for maior que a quantidade de registros dará erro
             pos < 0 || //Se a posição passada for negativa
-            n_registros < MAX //Se o tamanho da lista chegou no tamanho maximo
+            n_registros >= MAX //Se o tamanho da lista chegou no tamanho maximo
         )
         {
             //para a inserção e retorna falso
@@ -36,6 +42,24 @@ typedef struct
         A[pos] = value;
         n_registros++;//aumenta a quantidade de registros
         return true;
+    }
+    //método para buscar um elemento na lista
+    //retorna o indice que ele está
+    int busca(REGISTRO value){
+        int pos = n_registros-1;
+        while (pos >= 0)
+        {
+            REGISTRO comparador;
+            if (A[pos].chave == value.chave)
+            {
+                break;
+            }else
+            {
+                pos--;
+            }
+        }
+        
+        return pos;
     }
 }LISTA;
 
