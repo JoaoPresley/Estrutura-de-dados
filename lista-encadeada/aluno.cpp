@@ -75,6 +75,32 @@ public:
         //aumenta o tamanho da lista
         tam++;
     }
+    //metodo para remover valor (lista duplamente encadeada)
+    void remove(int id){
+        //validacao lista vazia
+        if(start == NULL){
+            cout << "Lista vazia!!";
+            return;
+        }
+
+        no *atual = start; //comeca a ler a lista do inicio
+        no *anterior = NULL; //variavel do no lido anteriormente
+        while (atual->prox != NULL && atual->id != id)
+        {
+            anterior = atual;
+            atual = atual->prox;
+        }
+        //atual eh o que quero remover
+        if(anterior != NULL){ //Caso exista anterior
+            anterior->prox = atual->prox;
+        }
+        else{ //se nao o anterior eh o start
+            this->start = atual->prox;
+        }
+        delete atual;
+        tam--;
+    }
+   
     //metodo para mostrar a lista
     void show(){
         //caso lista vazia
@@ -90,7 +116,7 @@ public:
             atual = atual->prox;
         }
     }
-    //metodo para remover valor (lista duplamente encadeada)
+    
 
 };
 
@@ -105,6 +131,10 @@ int main(){
     //INTERACOES
     cout << "Inserindo 3 na lista" << endl;
     temp.id = 3;
+    l.insert_ini(temp);
+
+    cout << "Inserindo 40 na lista" << endl;
+    *id = 40;
     l.insert_ini(temp);
 
     cout << "Inserindo 2 na lista" << endl;
@@ -128,6 +158,16 @@ int main(){
     cout << "Inserindo 1 no fim da lista" << endl;    
     *id = 1;
     l.insert_end(temp);
+
+    cout << "Lista encadeada: ";
+    l.show();
+
+    cout << "Removendo o id 1" << endl;
+    l.remove(1);
+    cout << "Removendo o id 2" << endl;
+    l.remove(2);
+    cout << "Removendo o id 14" << endl;
+    l.remove(14);
 
     cout << "Lista encadeada: ";
     l.show();

@@ -14,7 +14,7 @@ struct address {
 typedef struct address no;
 
 typedef struct {
-    no *inicio; 
+    no *inicio;  
     int tam;    
 } LISTA;
 
