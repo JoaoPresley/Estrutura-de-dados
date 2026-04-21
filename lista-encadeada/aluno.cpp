@@ -100,7 +100,6 @@ public:
         delete atual;
         tam--;
     }
-   
     //metodo para mostrar a lista
     void show(){
         //caso lista vazia
@@ -117,7 +116,6 @@ public:
         }
     }
     
-
 };
 
 
