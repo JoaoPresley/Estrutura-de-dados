@@ -23,7 +23,7 @@ struct dado{
 
 typedef dado no;
 
-typedef struct chain_list 
+typedef struct
 {
 private:
     //Inicio da lista
@@ -116,7 +116,7 @@ public:
         }
     }
     
-};
+}  chain_list;
 
 
 int main(){
